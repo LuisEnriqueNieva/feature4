@@ -2,6 +2,7 @@
 #include "nn_interfaces.h"
 #include "../algebra/tensor_ops.h"
 #include "nn_flatten.h"
+#include "nn_optimizer.h"
 
 namespace utec::tf {
     enum class Activation { Linear, Relu, Softmax };
@@ -11,9 +12,6 @@ namespace utec::tf {
         int batch_size = 1;
     };
 
-    namespace optimizers {
-        struct SGD { float lr; SGD(float lr) : lr(lr) {} };
-    }
     namespace losses {
         struct CategoricalCrossentropy {};
     }
